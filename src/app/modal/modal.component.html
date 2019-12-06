@@ -1,1 +1,15 @@
-<p>modal works!</p>
+<!-- <p>modal works!</p> -->
+<h1 mat-dialog-title>{{activity.activity}}</h1>
+<div class="activity-content" mat-dialog-content>
+    <mat-list role="list">
+        <mat-list-item class="item"><strong>Accessibility:&nbsp;</strong>{{activity.accessibility}}</mat-list-item>
+        <mat-list-item class="item"><strong>Type:&nbsp;</strong>{{activity.type}}</mat-list-item>
+        <mat-list-item class="item"><strong>Participants:&nbsp;</strong>{{activity.participants}}</mat-list-item>
+        <mat-list-item class="item"><strong>Price:&nbsp;</strong>{{activity.price}}</mat-list-item>
+        <mat-list-item class="item"><strong>Link:&nbsp;</strong>{{activity.link || '-empty-'}}</mat-list-item>
+        <mat-list-item class="item"><strong>Key:&nbsp;</strong>{{activity.key}}</mat-list-item>
+    </mat-list>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Ok</button>
+</div>

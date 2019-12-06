@@ -1,16 +1,31 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { FilterComponent } from './filter/filter.component';
+import { ResultsComponent } from './results/results.component';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { AppService } from './app.service';
+import { MatSliderModule, MatSelectModule, MatCardModule, MatListModule, MatDialogModule } from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        NoopAnimationsModule,
+        MatSliderModule,
+        MatSelectModule,
+        MatCardModule,
+        MatListModule,
+        MatDialogModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        FilterComponent,
+        ResultsComponent
       ],
+      providers: [HttpClient, HttpHandler, AppService]
     }).compileComponents();
   }));
 
