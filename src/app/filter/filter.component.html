@@ -1,21 +1,30 @@
 <form onsubmit="submit()">
   <h2>Minimum Price:</h2>
-  <mat-slider thumbLabel tickInterval="1" min="1" value="1"></mat-slider>
+  <mat-slider
+  thumbLabel 
+  tickInterval="0.1"
+  step="0.1"
+  min="0"
+  max="1"
+  [(value)]="minPrice"></mat-slider>
 
   <h2>Maximum Price:</h2>
   <mat-slider
     thumbLabel
-    tickInterval="1"
-    min="1"
-    max="100"
-    value="1"
+    tickInterval="0.1"
+    step="0.1"
+    min="0"
+    max="1"
+    [(value)]="maxPrice"
   ></mat-slider>
   <br />
   <mat-form-field>
     <mat-label>Activity Type</mat-label>
-    <mat-select>
+    <mat-select [(value)]="selectedType">
       <mat-option value="">Choose one</mat-option>
-    </mat-select> </mat-form-field
-  ><br />
-  <button mat-raised-button color="warn" type="button">Submit</button>
+      <mat-option *ngFor="let type of activityTypes" [value]="type">{{type}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="warn" type="button" (click)="submitFilter()">Submit</button>
 </form>

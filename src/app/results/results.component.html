@@ -1,6 +1,7 @@
 <mat-card
   class="activity-card"
   *ngFor="let activity of activities"
+  [ngClass]="{clickable: !!activity.activity}"
   #activityCard
-  onclick="openModal(activity)"
+  (click)="openModal(activity)"
 ></mat-card>

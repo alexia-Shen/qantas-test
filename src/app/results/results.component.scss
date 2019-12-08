@@ -1,0 +1,7 @@
+.activity-card {
+    margin-bottom: 10px;
+    border: 1px solid #ededed;
+    &.clickable{
+        cursor: pointer;
+    }
+}

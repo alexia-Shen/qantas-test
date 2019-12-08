@@ -13,8 +13,12 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
-  MatButtonModule
+  MatButtonModule,
+  MatListModule,
+  MatDialogModule
 } from '@angular/material';
+import { AppService } from './app.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +28,7 @@ import {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatSliderModule,
@@ -31,9 +36,12 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatListModule,
+    MatDialogModule,
     MatButtonModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AppService],
+  bootstrap: [AppComponent],
+  entryComponents: [ModalComponent]
 })
 export class AppModule {}
