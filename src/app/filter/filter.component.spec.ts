@@ -11,7 +11,7 @@ describe('FilterComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ FilterComponent ],
-      imports: [MatSelectModule, MatSliderModule, NoopAnimationsModule]
+      imports: [NoopAnimationsModule, MatSelectModule, MatSliderModule]
     })
     .compileComponents();
   }));
